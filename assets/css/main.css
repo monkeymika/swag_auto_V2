@@ -721,7 +721,7 @@ h4 {
   font-weight: 600 !important;
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.35) !important;
-  padding: 10px 0 10px 20px;
+  padding: 10px 0 10px 45px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
   text-transform: uppercase;
   transition:
@@ -951,11 +951,22 @@ h4 {
   padding-bottom: 120px;
   text-align: center;
 }
-.page-hero--full::before { display: none; }
+.page-hero--full::before {
+  display: none;
+}
 .page-hero--full::after {
   background:
-    linear-gradient(to bottom, rgba(8,11,19,0.55) 0%, rgba(8,11,19,0.7) 60%, var(--bg) 100%),
-    radial-gradient(ellipse at center, rgba(227,6,19,0.08) 0%, transparent 70%);
+    linear-gradient(
+      to bottom,
+      rgba(8, 11, 19, 0.55) 0%,
+      rgba(8, 11, 19, 0.7) 60%,
+      var(--bg) 100%
+    ),
+    radial-gradient(
+      ellipse at center,
+      rgba(227, 6, 19, 0.08) 0%,
+      transparent 70%
+    );
 }
 .page-hero--full .container {
   display: flex;
@@ -1210,7 +1221,9 @@ h4 {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: border-color var(--t), transform var(--t);
+  transition:
+    border-color var(--t),
+    transform var(--t);
 }
 .svc-card:hover {
   border-color: rgba(227, 6, 19, 0.4);
@@ -1252,10 +1265,14 @@ h4 {
 }
 
 @media (max-width: 900px) {
-  .svc-grid { grid-template-columns: repeat(2, 1fr); }
+  .svc-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media (max-width: 500px) {
-  .svc-grid { grid-template-columns: 1fr; }
+  .svc-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -2416,11 +2433,15 @@ a.contact-card-value:hover {
   max-width: 480px;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 0 60px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.06);
+  box-shadow:
+    0 0 60px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
   transform: scale(0.94);
   transition: transform 0.3s ease;
 }
-#video-modal.open .video-modal-inner { transform: scale(1); }
+#video-modal.open .video-modal-inner {
+  transform: scale(1);
+}
 .video-modal-inner video {
   display: block;
   width: 100%;
@@ -2434,7 +2455,7 @@ a.contact-card-value:hover {
   height: 32px;
   border-radius: 50%;
   border: none;
-  background: rgba(8,11,19,0.7);
+  background: rgba(8, 11, 19, 0.7);
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
@@ -2445,14 +2466,16 @@ a.contact-card-value:hover {
   transition: background var(--t);
   z-index: 1;
 }
-.video-modal-close:hover { background: var(--red); }
+.video-modal-close:hover {
+  background: var(--red);
+}
 
 /* ══════════════════════════════════════════════════════════════
    PAGE LOADER
 ══════════════════════════════════════════════════════════════ */
 /* Couvre la page dès le premier paint CSS — avant que JS injecte le loader */
 body::before {
-  content: '';
+  content: "";
   position: fixed;
   inset: 0;
   background: #080b13;
@@ -2484,24 +2507,39 @@ body.page-loaded::before {
 .loader-logo {
   width: 160px;
   height: 160px;
-  animation: loaderDraw 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards,
-             loaderPulse 1s ease-in-out 0.75s infinite alternate;
+  animation:
+    loaderDraw 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+    loaderPulse 1s ease-in-out 0.75s infinite alternate;
   will-change: transform, opacity, clip-path;
 }
 @keyframes loaderDraw {
-  from { clip-path: inset(100% 0 0 0); opacity: 1; }
-  to   { clip-path: inset(0% 0 0 0);   opacity: 1; }
+  from {
+    clip-path: inset(100% 0 0 0);
+    opacity: 1;
+  }
+  to {
+    clip-path: inset(0% 0 0 0);
+    opacity: 1;
+  }
 }
 @keyframes loaderPulse {
-  from { transform: scale(0.95); opacity: 0.75; }
-  to   { transform: scale(1.05); opacity: 1;    }
+  from {
+    transform: scale(0.95);
+    opacity: 0.75;
+  }
+  to {
+    transform: scale(1.05);
+    opacity: 1;
+  }
 }
 /* Fade-out du body au changement de page */
 body.page-exiting {
   animation: pageExit 0.22s ease forwards;
 }
 @keyframes pageExit {
-  to { opacity: 0; }
+  to {
+    opacity: 0;
+  }
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -2592,7 +2630,7 @@ body.page-exiting {
     margin-top: 20px;
     background: none;
     border: none;
-    color: rgba(255,255,255,0.65);
+    color: rgba(255, 255, 255, 0.65);
     font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.1em;
@@ -2601,7 +2639,9 @@ body.page-exiting {
     transition: color var(--t);
     padding: 0;
   }
-  .hero-video-trigger:hover { color: #fff; }
+  .hero-video-trigger:hover {
+    color: #fff;
+  }
   .hero-video-trigger-icon {
     display: flex;
     align-items: center;
@@ -2609,12 +2649,14 @@ body.page-exiting {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    border: 1.5px solid rgba(255,255,255,0.4);
-    transition: border-color var(--t), background var(--t);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    transition:
+      border-color var(--t),
+      background var(--t);
   }
   .hero-video-trigger:hover .hero-video-trigger-icon {
     border-color: var(--red);
-    background: rgba(227,6,19,0.15);
+    background: rgba(227, 6, 19, 0.15);
   }
 
   .hero-scroll {
