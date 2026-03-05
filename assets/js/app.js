@@ -6,9 +6,16 @@
 
 /* ── CONFIG ─────────────────────────────────────────────────── */
 const BASE = (() => {
+  const SUB_PAGES = new Set([
+    'contact','a-propos','services','galerie-2',
+    'active-sound-system','covering-total-ou-partiel',
+    'lustrage-et-renovation-de-carrosserie','peinture-etrier-de-frein',
+    'protection-ceramique-2','protection-solaire-vitre-teinte',
+    'ciel-etoile','mentions-legales','politique-de-confidentialite'
+  ]);
   const parts = location.pathname.split('/').filter(Boolean);
-  // If we're in a subdirectory, go up one level
-  return parts.length > 0 ? '../' : './';
+  const last = parts[parts.length - 1];
+  return (parts.length > 0 && SUB_PAGES.has(last)) ? '../' : './';
 })();
 
 const LINKS = {
