@@ -45,6 +45,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 body {
   background: var(--bg);
@@ -122,6 +123,7 @@ h4 {
 }
 .section {
   padding-block: var(--py);
+  overflow-x: clip;
 }
 
 /* Section backgrounds are transparent — body bg animated by GSAP on scroll */
