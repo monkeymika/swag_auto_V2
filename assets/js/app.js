@@ -337,8 +337,51 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
     initBTT();
     initFaq();
+    initMobileVideoPlay();
   }, { once: true });
 });
+
+/* ── MOBILE VIDEO MODAL ──────────────────────────────────────── */
+function initMobileVideoPlay() {
+  if (window.innerWidth > 768) return; // desktop : rien à faire
+  const trigger = document.getElementById('hero-video-trigger');
+  if (!trigger) return;
+  trigger.hidden = false;
+
+  // Crée la modale
+  const modal = document.createElement('div');
+  modal.id = 'video-modal';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.innerHTML = `
+    <div class="video-modal-inner">
+      <button class="video-modal-close" aria-label="Fermer">✕</button>
+      <video src="${BASE}assets/media/video_swag_auto_compressed-1.mp4"
+             playsinline controls preload="none"
+             poster="${BASE}assets/media/Galerie_SwagAuto-10-min.webp">
+      </video>
+    </div>`;
+  document.body.appendChild(modal);
+
+  const modalVideo = modal.querySelector('video');
+
+  const open = () => {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    modalVideo.play();
+  };
+  const close = () => {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    modalVideo.pause();
+    modalVideo.currentTime = 0;
+  };
+
+  trigger.addEventListener('click', open);
+  modal.querySelector('.video-modal-close').addEventListener('click', close);
+  modal.addEventListener('click', e => { if (e.target === modal) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+}
 
 /* ── ACTIVE LINK ─────────────────────────────────────────────── */
 function markActiveLink() {
