@@ -12,7 +12,13 @@
       "WebFetch(domain:dhero.studio)",
       "Bash(xargs ls:*)",
       "Bash(ls:*)",
-      "WebFetch(domain:www.theguardians.at)"
+      "WebFetch(domain:www.theguardians.at)",
+      "Bash(ffmpeg -version)",
+      "Bash(ffmpeg:*)",
+      "Bash(ffprobe:*)",
+      "Bash(__NEW_LINE_5acd6a989e24fa3c__ ffmpeg:*)",
+      "Bash(__NEW_LINE_88d7b99fe2b95ab9__ ffmpeg:*)",
+      "Bash(__NEW_LINE_bd8462df78dc6578__ ffmpeg:*)"
     ]
   }
 }

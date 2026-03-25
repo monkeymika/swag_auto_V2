@@ -23,6 +23,23 @@
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Image plein hero, sans gradient latéral */
+    .page-hero-bg--active-sound {
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.65;
+    }
+    .page-hero--active-sound::after {
+      background: rgba(8, 11, 19, 0.65);
+    }
+    @media (max-width: 768px) {
+      .page-hero-bg--active-sound {
+        opacity: 0.55;
+      }
+    }
+  </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Service","name":"Active Sound System MAXHAUST Nancy","provider":{"@type":"LocalBusiness","name":"Swag Auto Nancy","url":"https://swagauto.fr","telephone":"+33980242400"},"areaServed":"Nancy","description":"Installation d'Active Sound System MAXHAUST. Revendeur officiel pour la France."}
   </script>
@@ -30,8 +47,8 @@
 
 <body>
   <main>
-    <section class="page-hero">
-      <div class="page-hero-bg" style="background-image:url('../assets/media/ActiveSoundSystem_11zon.webp')"></div>
+    <section class="page-hero page-hero--active-sound">
+      <div class="page-hero-bg page-hero-bg--active-sound" style="background-image:url('../assets/media/active-sound-system-hero.webp')"></div>
       <div class="container">
         <div class="page-hero-inner">
           <p class="label">Puissance Sonore</p>

@@ -12,7 +12,7 @@ const ASSETS = [
   '/protection-solaire-vitre-teinte/',
   '/covering-total-ou-partiel/',
   '/protection-ceramique/',
-  '/protection-ceramique-2/',
+  '/protection-ceramique/',
   '/lustrage-et-renovation-de-carrosserie/',
   '/peinture-etrier-de-frein/',
   '/active-sound-system/',

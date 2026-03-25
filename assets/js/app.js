@@ -7,10 +7,10 @@
 /* ── CONFIG ─────────────────────────────────────────────────── */
 const BASE = (() => {
   const SUB_PAGES = new Set([
-    'contact','a-propos','services','galerie-2',
+    'contact','a-propos','services','galerie',
     'active-sound-system','covering-total-ou-partiel',
     'lustrage-et-renovation-de-carrosserie','peinture-etrier-de-frein',
-    'protection-ceramique-2','protection-solaire-vitre-teinte',
+    'protection-ceramique','protection-solaire-vitre-teinte',
     'ciel-etoile','mentions-legales','politique-de-confidentialite'
   ]);
   const parts = location.pathname.split('/').filter(Boolean);
@@ -46,6 +46,7 @@ function buildNav() {
       <a href="${LINKS.email}" class="topbar-link">${ICONS.mail} swagauto@outlook.fr</a>
     </div>
     <div class="topbar-right">
+      <span class="topbar-follow">Suivez-nous</span>
       <a href="${LINKS.instagram}" target="_blank" rel="noopener" class="topbar-social" aria-label="Instagram">${ICONS.instagram}</a>
       <a href="${LINKS.facebook}"  target="_blank" rel="noopener" class="topbar-social" aria-label="Facebook">${ICONS.facebook}</a>
       <a href="${LINKS.tiktok}"    target="_blank" rel="noopener" class="topbar-social" aria-label="TikTok">${ICONS.tiktok}</a>
@@ -68,14 +69,14 @@ function buildNav() {
           <div class="dropdown-menu">
             <a href="${BASE}protection-solaire-vitre-teinte/">Vitres teintées</a>
             <a href="${BASE}covering-total-ou-partiel/">Covering</a>
-            <a href="${BASE}protection-ceramique-2/">Protection céramique</a>
+            <a href="${BASE}protection-ceramique/">Protection céramique</a>
             <a href="${BASE}lustrage-et-renovation-de-carrosserie/">Lustrage & rénovation</a>
             <a href="${BASE}peinture-etrier-de-frein/">Peinture étriers</a>
             <a href="${BASE}active-sound-system/">Active Sound System</a>
             <a href="${BASE}ciel-etoile/">Ciel étoilé</a>
           </div>
         </li>
-        <li><a href="${BASE}galerie-2/">Galerie</a></li>
+        <li><a href="${BASE}galerie/">Galerie</a></li>
         <li><a href="${BASE}contact/">Contact</a></li>
       </ul>
     </nav>
@@ -105,14 +106,14 @@ function buildNav() {
       <div class="overlay-services-sub" id="overlay-services-sub" aria-hidden="true">
         <a href="${BASE}protection-solaire-vitre-teinte/">Vitres teintées</a>
         <a href="${BASE}covering-total-ou-partiel/">Covering</a>
-        <a href="${BASE}protection-ceramique-2/">Protection céramique</a>
+        <a href="${BASE}protection-ceramique/">Protection céramique</a>
         <a href="${BASE}lustrage-et-renovation-de-carrosserie/">Lustrage &amp; rénovation</a>
         <a href="${BASE}peinture-etrier-de-frein/">Peinture étriers</a>
         <a href="${BASE}active-sound-system/">Active Sound System</a>
         <a href="${BASE}ciel-etoile/">Ciel étoilé</a>
       </div>
 
-      <a href="${BASE}galerie-2/">Galerie</a>
+      <a href="${BASE}galerie/">Galerie</a>
       <a href="${BASE}contact/">Contact</a>
     </nav>
     <a href="${BASE}contact/" class="btn btn-red overlay-cta-btn">Devis gratuit</a>
@@ -156,7 +157,7 @@ function buildFooter() {
         <ul>
           <li><a href="${BASE}protection-solaire-vitre-teinte/">Vitres teintées</a></li>
           <li><a href="${BASE}covering-total-ou-partiel/">Covering</a></li>
-          <li><a href="${BASE}protection-ceramique-2/">Protection céramique</a></li>
+          <li><a href="${BASE}protection-ceramique/">Protection céramique</a></li>
           <li><a href="${BASE}lustrage-et-renovation-de-carrosserie/">Lustrage</a></li>
           <li><a href="${BASE}peinture-etrier-de-frein/">Peinture étriers</a></li>
           <li><a href="${BASE}active-sound-system/">Active Sound</a></li>
@@ -168,7 +169,7 @@ function buildFooter() {
         <ul>
           <li><a href="${BASE}index.html">Accueil</a></li>
           <li><a href="${BASE}a-propos/">À propos</a></li>
-          <li><a href="${BASE}galerie-2/">Galerie</a></li>
+          <li><a href="${BASE}galerie/">Galerie</a></li>
           <li><a href="${BASE}contact/">Contact</a></li>
           <li><a href="${BASE}mentions-legales/">Mentions légales</a></li>
           <li><a href="${BASE}politique-de-confidentialite/">Confidentialité</a></li>
