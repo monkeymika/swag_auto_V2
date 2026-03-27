@@ -744,6 +744,7 @@ function initContactForm() {
   if (!form) return;
   form.addEventListener('submit', e => {
     e.preventDefault();
+    form.reset();
     const btn = form.querySelector('[type="submit"]');
     btn.textContent = '✓ Message envoyé !';
     btn.disabled = true;
