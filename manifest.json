@@ -1,0 +1,22 @@
+{
+  "name": "Swag Auto Nancy",
+  "short_name": "Swag Auto",
+  "description": "Expert en esthétique automobile à Nancy — Vitres teintées, covering, céramique, lustrage.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080b13",
+  "theme_color": "#e30613",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/assets/media/cropped-Favicon-min-180x180.webp",
+      "sizes": "180x180",
+      "type": "image/webp"
+    },
+    {
+      "src": "/assets/media/cropped-Favicon-min.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ]
+}
