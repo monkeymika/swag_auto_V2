@@ -742,18 +742,44 @@ function initLightbox() {
 function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    form.reset();
     const btn = form.querySelector('[type="submit"]');
-    btn.textContent = '✓ Message envoyé !';
+    btn.textContent = 'Envoi en cours…';
     btn.disabled = true;
-    btn.style.background = '#1a6b28';
-    setTimeout(() => {
-      btn.textContent = 'Envoyer ma demande';
-      btn.disabled = false;
-      btn.style.background = '';
-    }, 4000);
+
+    const data = new FormData(form);
+    data.append('access_key', '3f0ea02b-28b1-40ba-b9ab-75f4093faf21');
+    data.append('subject', 'Nouveau devis — Swag Auto Nancy');
+    data.append('from_name', 'Swag Auto Nancy');
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      });
+      const json = await res.json();
+      if (json.success) {
+        form.reset();
+        btn.textContent = '✓ Message envoyé !';
+        btn.style.background = '#1a6b28';
+        setTimeout(() => {
+          btn.textContent = 'Envoyer ma demande';
+          btn.disabled = false;
+          btn.style.background = '';
+        }, 4000);
+      } else {
+        throw new Error(json.message);
+      }
+    } catch {
+      btn.textContent = '✗ Erreur, réessayez';
+      btn.style.background = '#b91c1c';
+      setTimeout(() => {
+        btn.textContent = 'Envoyer ma demande';
+        btn.disabled = false;
+        btn.style.background = '';
+      }, 4000);
+    }
   });
 }
 
